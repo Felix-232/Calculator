@@ -1,0 +1,140 @@
+body {
+	background-image: url(stacked-waves-haikei.svg);
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	font-weight: 700;
+	font-size: 50px;
+	text-decoration: underline;
+	margin: 0;
+}
+
+.container {
+	width: 500px;
+	height: 700px;
+	background-color: rgb(69, 156, 236);
+	border: 2px solid black;
+	border-radius: 20px;
+	box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.445);
+	padding: 10px;
+	margin: 5px auto;
+	display: grid;
+	grid-template-columns: 4fr 1.5fr;
+	grid-template-areas:
+		"display display"
+		"numbers operators"
+		"numbers operators"
+		"numbers operators"
+		"numbers operators";
+	overflow: hidden;
+}
+
+.display {
+	grid-area: display;
+	min-height: 70px;
+	display: flex;
+	justify-content: right;
+	align-items: end;
+	padding: 5px 10px;
+}
+
+.displayText {
+	font-size: 60px;
+	font-family: "Roboto Mono ", monospace;
+}
+
+.displayText.errorText {
+	color: red;
+	font-size: 50px;
+}
+
+.numbers {
+	grid-area: numbers;
+	/* background-color: rgb(173, 216, 230); */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas:
+		"clear del del"
+		"num num num"
+		"num num num"
+		"num num num"
+		"num num num";
+	gap: 2px;
+	padding: 2px;
+}
+
+#initials {
+	font-size: 20px;
+	font-weight: 1000;
+	background-color: gold;
+}
+
+#initials:hover {
+	color: gold;
+	background-color: black;
+}
+
+#zeroBtn {
+	grid-column: 2;
+}
+
+#decBtn {
+	font-weight: 700;
+}
+
+#delBtn {
+	grid-area: del;
+}
+
+.operators {
+	grid-area: operators;
+	/* background-color: rgb(144, 238, 144); */
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2px;
+	padding: 2px;
+}
+
+.number {
+	background-color: rgba(236, 236, 236, 0.767);
+}
+
+.operator:not(:last-child) {
+	background-color: rgb(252, 252, 235);
+}
+
+#equalBtn {
+	background-color: rgb(168, 255, 255);
+}
+
+#clearBtn {
+	background-color: rgb(245, 153, 153);
+}
+
+#delBtn {
+	background-color: rgb(253, 201, 163);
+}
+.number,
+.operator,
+.utility {
+	background-color: rgba(236, 236, 236, 0.767);
+	border-radius: 8px;
+	border-width: 0;
+	box-shadow: 2px 2px 5px 0 rgb(124, 124, 124);
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 10px 12px;
+	transition: all 200ms;
+}
+
+.number:hover,
+.operator:hover,
+#equalBtn:hover,
+#clearBtn:hover,
+#delBtn:hover {
+	background-color: #fffafa;
+}
